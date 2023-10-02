@@ -1,0 +1,185 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/components';
+@import 'scss/typography';
+@import 'utils';
+$animation-time: 400ms;
+
+@mixin setAnimation ($time, $delay) {
+  animation: fadeInUp $time $transition-function $delay both;
+}
+
+.hero-section {
+  @extend %max-size-padding;
+
+  align-items: center;
+  background: $violet url('./assets/background.jpg') no-repeat top / cover;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+
+  &.bring-to-front {
+    z-index: $navbar-z-index;
+  }
+}
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  @extend %title;
+
+  color: $white;
+  @include setAnimation(600ms, $animation-time);
+  letter-spacing: -3.33px;
+  margin-bottom: maxScalingSize(40);
+  max-width: maxScalingSize(950);
+}
+
+.play-btn {
+  @extend %button;
+
+  background-color: $transparent;
+  border: 2px solid $white;
+  color: $white;
+  cursor: pointer;
+  @include setAnimation(600ms, $animation-time + 150);
+  padding: maxScalingSize(14) maxScalingSize(24);
+}
+
+.container {
+  height: 100%;
+  padding: $navbar-height maxScalingSize(30) maxScalingSize(20);
+  position: relative;
+  width: 100%;
+}
+
+.btn-close {
+  align-items: center;
+  background-color: rgba($black, 0.8);
+  color: $white;
+  cursor: pointer;
+  display: flex;
+  font-size: maxScalingSize(30);
+  height: 4vw;
+  justify-content: center;
+  line-height: 1.1;
+  opacity: 0;
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  transition: opacity $quick-transition-duration $transition-function;
+  width: 4vw;
+
+  &:hover {
+    color: $light-violet;
+  }
+
+  &.visible {
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .content {
+    padding: 0 desktopSize(90);
+  }
+
+  .hero-section {
+    padding: 0;
+  }
+
+  .title {
+    margin-bottom: desktopSize(40);
+    max-width: desktopSize(950);
+  }
+
+  .play-btn {
+    padding: desktopSize(14) desktopSize(24);
+  }
+
+  .container {
+    padding: $navbar-height desktopSize(30) desktopSize(20);
+  }
+
+  .btn-close {
+    font-size: desktopSize(30);
+  }
+}
+
+@media screen and (max-width: $big-device) {
+  .hero-section {
+    background-position: calc(100vw * -0.98 + 23px);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .content {
+    padding: 0 mediumSize(40);
+  }
+
+  .title {
+    letter-spacing: -1.87px;
+    margin-bottom: mediumSize(40);
+    max-width: mediumSize(460);
+  }
+
+  .play-btn {
+    border-width: 1px;
+    padding: 14px 24px;
+  }
+
+  .container {
+    padding: $navbar-height 30px 20px;
+  }
+
+  .modal {
+    margin: 0;
+    width: $medium-device;
+  }
+
+  .btn-close {
+    font-size: 30px;
+    right: 30px;
+    top: 10px;
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .hero-section {
+    background-position: 75% center;
+  }
+
+  .title {
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
+    max-width: 350px;
+  }
+
+  .content {
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

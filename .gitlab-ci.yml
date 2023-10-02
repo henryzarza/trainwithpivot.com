@@ -1,0 +1,68 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  BUILD_FOLDER: build/ # needs to match the target of the yarn build command.
+
+stages:
+  - build
+  - deploy
+
+build:
+  image: node:10
+  stage: build
+
+  script:
+    - yarn install
+    - yarn build:development
+
+  artifacts:
+    paths:
+      - $BUILD_FOLDER
+
+deploy:development:
+  image: xueshanf/awscli
+
+  stage: deploy
+
+  dependencies:
+    - build
+
+  script:
+    - aws s3 sync $BUILD_FOLDER s3://preview.trainwithpivot.com/ --delete
+
+  only:
+    - tags
+    - master
+
+deploy:wolox:
+  image: xueshanf/awscli
+  variables:
+    REACT_APP_STRIPE_API_KEY: $REACT_APP_STRIPE_TEST_API_KEY
+
+  stage: deploy
+
+  dependencies:
+    - build
+
+  script:
+    - cd $BUILD_FOLDER && aws s3 sync . s3://trainwithpivot-wolox/ --delete
+    - aws cloudfront create-invalidation --distribution-id EQFQDBPCLLY7O --paths "/*"
+
+  only:
+    - wolox
+
+deploy:wolox2:
+  image: xueshanf/awscli
+  variables:
+    REACT_APP_STRIPE_API_KEY: $REACT_APP_STRIPE_TEST_API_KEY
+
+  stage: deploy
+
+  dependencies:
+    - build
+
+  script:
+    - cd $BUILD_FOLDER && aws s3 sync . s3://trainwithpivot-wolox2/ --delete
+    - aws cloudfront create-invalidation --distribution-id E1HRDVLNZWEAQE --paths "/*"
+
+  only:
+    - wolox2

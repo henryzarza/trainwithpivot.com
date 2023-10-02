@@ -1,0 +1,61 @@
+@import 'variables/colors';
+@import 'variables/variables';
+@import 'utils';
+
+// Override slider styles
+.carousel {
+  height: 100%;
+
+  li.slide {
+    background-color: $white;
+  }
+
+  .slider-wrapper {
+    height: 100%;
+
+    &.axis-horizontal .slider {
+      height: 100%;
+      padding-bottom: desktopSize(50);
+    }
+  }
+
+  .control-dots {
+    margin: 0 0 desktopSize(10);
+
+    li.dot {
+      border: 1px solid $black;
+      box-shadow: none;
+      height: desktopSize(15);
+      margin: 0 desktopSize(8) 0 0;
+      opacity: 1;
+      outline: none;
+      width: desktopSize(15);
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.selected {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .carousel {
+    .slider-wrapper.axis-horizontal .slider {
+      padding-bottom: 50px;
+    }
+
+    .control-dots {
+      margin: 0 0 10px;
+
+      li.dot {
+        height: 15px;
+        margin: 0 8px 0 0;
+        width: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import 'colors';
+@import 'variables';
+@import 'utils';
+$content-width: calc(100% - #{desktopSize(60)});
+
+.included-section {
+  @extend %max-size-padding;
+
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: maxScalingSize(130);
+  padding-top: maxScalingSize(130);
+}
+
+.section-title {
+  margin-bottom: maxScalingSize(160);
+}
+
+.included-img {
+  height: auto;
+  margin-bottom: maxScalingSize(80);
+  max-width: 100%;
+  object-fit: cover;
+  width: maxScalingSize(1200);
+}
+
+.list-container {
+  align-self: flex-start;
+  align-self: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: maxScalingSize(10) maxScalingSize(90);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: maxScalingSize(1200);
+  width: 100%;
+}
+
+.item {
+  display: grid;
+  grid-gap: maxScalingSize(60);
+  grid-template-columns: maxScalingSize(60) auto;
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .included-section {
+    padding: 0 desktopSize(160) desktopSize(160);
+  }
+
+  .section-title {
+    margin-bottom: desktopSize(160);
+  }
+
+  .included-img {
+    max-height: calc(100vh - #{desktopSize(70)});
+    width: unset;
+  }
+
+  .list-container {
+    grid-gap: desktopSize(10) desktopSize(90);
+    max-width: 100%;
+  }
+
+  .item {
+    grid-gap: desktopSize(50);
+    grid-template-columns: desktopSize(50) auto;
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .included-section {
+    padding: mediumSize(120) mediumSize(40);
+  }
+
+  .included-img {
+    margin-bottom: mediumSize(50);
+    padding: 0;
+  }
+
+  .list-container {
+    grid-gap: mediumSize(20) 0;
+    padding: 0;
+  }
+
+  .item {
+    grid-gap: mediumSize(20);
+    grid-template-columns: mediumSize(25) auto;
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .included-section {
+    padding: mediumSize(120) mediumSize(40);
+  }
+
+  .section-title,
+  .included-img {
+    margin-bottom: 35px;
+  }
+
+  .included-img {
+    max-height: calc(100vh - #{$navbar-height});
+  }
+
+  .list-container {
+    grid-auto-flow: initial;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 20px;
+    width: 100%;
+  }
+
+  .item {
+    font-size: 16px;
+    grid-gap: 30px;
+    grid-template-columns: 40px auto;
+    line-height: 1.44;
+  }
+
+  .item-title {
+    display: inline-block;
+    margin-right: 25px;
+    width: 26px;
+  }
+}

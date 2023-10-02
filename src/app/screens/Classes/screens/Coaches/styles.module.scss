@@ -1,0 +1,111 @@
+@import 'colors';
+@import 'variables';
+@import 'mixins';
+@import 'utils';
+
+.section {
+  @extend %max-size-padding;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding-bottom: maxScalingSize(220);
+  padding-top: maxScalingSize(220);
+}
+
+.title {
+  margin-bottom: maxScalingSize(120);
+  white-space: pre-line;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-gap: maxScalingSize(40);
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.coach-img {
+  width: 100%;
+}
+
+.coach-name {
+  @include base-text(maxScalingSize(40), 1.1);
+}
+
+.coach-info {
+  padding-right: maxScalingSize(80);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .section {
+    padding: desktopSize(220) desktopSize(90);
+  }
+  
+  .title {
+    margin-bottom: desktopSize(120);
+  }
+  
+  .container {
+    grid-gap: desktopSize(40);
+    grid-template-columns: repeat(2, desktopSize(610));
+  }
+  
+  .coach-name {
+    @include base-text(desktopSize(40), 1.1);
+  }
+  
+  .coach-info {
+    padding-right: desktopSize(80);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .container {
+    grid-gap: mediumSize(25);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coach-info {
+    padding-right: 0;
+  }
+
+  .section {
+    padding: mediumSize(100) mediumSize(40);
+  }
+
+  .title {
+    letter-spacing: mediumSize(-2);
+    margin-bottom: mediumSize(80);
+  }
+
+  .coach-name {
+    font-size: mediumSize(40);
+    white-space: pre-line;
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .container {
+    grid-gap: 80px;
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 120px 20px;
+  }
+
+  .title {
+    letter-spacing: -1.5px;
+    margin-bottom: 60px;
+  }
+
+  .coach-name {
+    @include base-text(35px, 1.1);
+  }
+}

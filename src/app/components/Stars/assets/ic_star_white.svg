@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>5</title>
+    <desc>Created with Sketch.</desc>
+    <linearGradient id="empty-grad" x1="0" x2="100%" y1="0" y2="0">
+      <stop offset="50%" stop-color="white"/>
+      <stop offset="50%" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="half-grad" x1="0" x2="100%" y1="0" y2="0">
+      <stop offset="50%" stop-color="#7884D4"/>
+      <stop offset="50%" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="full-grad" x1="0" x2="100%" y1="0" y2="0">
+      <stop offset="50%" stop-color="#7884D4"/>
+      <stop offset="50%" stop-color="#7884D4"/>
+    </linearGradient>
+    <path fill="url(#empty-grad)" d="M20.388,10.918L32,12.118l-8.735,7.749L25.914,31.4l-9.893-6.088L6.127,31.4l2.695-11.533L0,12.118
+  l11.547-1.2L16.026,0.6L20.388,10.918z"/>
+</svg>

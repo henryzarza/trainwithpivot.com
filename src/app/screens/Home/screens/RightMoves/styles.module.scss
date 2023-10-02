@@ -1,0 +1,110 @@
+@import 'colors';
+@import 'variables';
+@import 'utils';
+
+.section {
+  background: $cornflower-blue url('./assets/background.jpg') no-repeat top center / cover;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.section-content {
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 100vh;
+  width: $max-scaling-device-width;
+}
+
+.content {
+  left: maxScalingSize(90);
+  max-width: 100%;
+  position: relative;
+  width: maxScalingSize(505);
+}
+
+.button {
+  width: maxScalingSize(180);
+}
+
+.img-content {
+  background: $cornflower-blue url('./assets/background-mobile.jpg') no-repeat 35% / cover;
+  display: none;
+  height: 500px;
+  width: 100%;
+}
+
+.is-tablet {
+  &.section {
+    background-position: center;
+    min-height: mediumSize(610);
+  }
+
+  .section-content {
+    min-height: mediumSize(610);
+  }
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .content {
+    left: desktopSize(90);
+    width: desktopSize(505);
+  }
+
+  .button {
+    width: desktopSize(180);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .section {
+    background-position: center;
+    min-height: mediumSize(610);
+  }
+
+  .section-content {
+    min-height: mediumSize(610);
+  }
+
+  .content {
+    left: 0;
+    padding: 0 mediumSize(40);
+    width: mediumSize(365);
+  }
+
+  .button {
+    width: desktopSize(235);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .img-content {
+    display: block;
+  }
+
+  .section-content {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .section {
+    background: $white;
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 50px 20px;
+    width: 100%;
+  }
+
+  .text {
+    color: $black;
+  }
+
+  .button {
+    border: 1px solid $black;
+    color: $black;
+    margin: 20px auto 30px;
+    width: 175px;
+  }
+}

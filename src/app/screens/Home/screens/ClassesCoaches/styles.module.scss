@@ -1,0 +1,190 @@
+@import 'colors';
+@import 'variables';
+@import 'utils';
+$custom-big-screen: $big-device + 220;
+
+.section {
+  @extend %max-size-padding;
+  --position-title: initial;
+  --opacity-title: 0;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.title {
+  margin-bottom: maxScalingSize(150);
+  width: 100%;
+  white-space: pre-line;
+
+  &.main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    left: 0;
+    margin-bottom: 0;
+    opacity: var(--opacity-title);
+    position: var(--position-title);
+    right: 0;
+    top: 0;
+  }
+}
+
+.container {
+  display: grid;
+  grid-gap: maxScalingSize(40);
+  grid-template-columns: repeat(4, maxScalingSize(280));
+  justify-content: center;
+  margin-bottom: maxScalingSize(125);
+}
+
+.container-classes {
+  @extend .container;
+
+  grid-gap: maxScalingSize(40);
+  grid-template-columns: repeat(3, maxScalingSize(395));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.coach-img {
+  width: 100%;
+}
+
+.coach-name {
+  white-space: pre-line;
+}
+
+.button {
+  align-self: center;
+  border: maxScalingSize(1) solid $black;
+  height: maxScalingSize(50);
+  margin: 0 auto maxScalingSize(215);
+  max-width: 100%;
+  width: maxScalingSize(255);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .section {
+    padding: desktopSize(220) desktopSize(20) 0;
+  }
+
+  .title {
+    margin-bottom: desktopSize(150);
+  }
+
+  .container {
+    grid-gap: desktopSize(40);
+    grid-template-columns: repeat(4, desktopSize(280));
+    margin-bottom: desktopSize(125);
+  }
+
+  .container-classes {
+    grid-gap: desktopSize(40);
+    grid-template-columns: repeat(3, desktopSize(395));
+  }
+
+  .button {
+    border-width: desktopSize(1);
+    height: desktopSize(50);
+    margin: 0 auto desktopSize(215);
+    width: desktopSize(255);
+  }
+}
+
+@media screen and (max-width: $custom-big-screen) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container-classes {
+    grid-gap: screenSize(25, 1240);
+    grid-template-columns: repeat(3, minmax(screenSize(300, 1240), 1fr));
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .section {
+    padding: mediumSize(110) mediumSize(40) mediumSize(10);
+  }
+
+  .title {
+    margin-bottom: mediumSize(80);
+
+    &.main {
+      height: auto;
+      margin-bottom: mediumSize(80);
+      opacity: 1;
+    }
+  }
+
+  .container {
+    grid-gap: mediumSize(40);
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: mediumSize(80);
+  }
+
+  .container-classes {
+    grid-gap: mediumSize(30);
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    border-width: 1px;
+    height: mediumSize(45);
+    margin-bottom: mediumSize(100);
+    width: mediumSize(180);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .section {
+    padding: 60px 20px 80px;
+  }
+
+  .button {
+    margin-bottom: 0;
+    height: 50px;
+    width: auto;
+
+    &.first {
+      margin-bottom: 130px;
+    }
+  }
+
+  .title {
+    font-size: 42px;
+    letter-spacing: -1px;
+
+    &.main {
+      margin-bottom: 55px;
+    }
+
+    &.last {
+      margin-bottom: 60px;
+    }
+  }
+
+  .container {
+    grid-gap: 80px;
+    grid-template-columns: 1fr;
+    margin-bottom: 80px;
+  }
+
+  .container-classes {
+    grid-gap: 80px;
+    grid-template-columns: 1fr;
+  }
+
+  .coach-name {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+}

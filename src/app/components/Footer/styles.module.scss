@@ -1,0 +1,255 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/typography';
+
+.container {
+  @extend %max-size-padding;
+
+  background-color: $violet;
+  overflow: hidden;
+  padding-bottom: maxScalingSize(85);
+  padding-top: maxScalingSize(55);
+  width: 100%;
+}
+
+.inner-container {
+  width: 100%;
+}
+
+.logo {
+  width: maxScalingSize(125);
+}
+
+.links-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: maxScalingSize(5) maxScalingSize(45);
+  grid-template-rows: repeat(4, 1fr);
+  width: maxScalingSize(345);
+}
+
+.link {
+  &:active, &:focus {
+    color: white;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.social-link {
+  background-color: $white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: maxScalingSize(20);
+  height: maxScalingSize(38);
+  width: maxScalingSize(38);
+  transition: box-shadow $quick-transition-duration $transition-function;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    box-shadow: maxScalingSize(2) maxScalingSize(2) maxScalingSize(1) rgba($black, 0.4);
+
+    > .icon path {
+      fill: $violet;
+    }
+  }
+}
+
+.icon {
+  width: maxScalingSize(20);
+}
+
+.contact-section {
+  align-content: space-between;
+  display: grid;
+  flex: 1 1;
+  row-gap: maxScalingSize(40);
+  width: 50%;
+}
+
+.sn-links-container,
+.phone-container,
+.subscription-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sn-links-container {
+  grid-column: 1/4;
+}
+
+.phone-container {
+  grid-column: 4/6;
+}
+
+.subscription-form-container {
+  grid-column: 1/6;
+}
+
+.contact-title {
+  @extend %small-subtitle;
+
+  color: $white;
+  font-size: maxScalingSize(20);
+  font-weight: 800;
+  margin-bottom: maxScalingSize(25);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .container {
+    padding: desktopSize(55) desktopSize(195) desktopSize(85);
+  }
+
+  .logo {
+    width: desktopSize(125);
+  }
+  
+  .links-container {
+    grid-gap: desktopSize(5) desktopSize(45);
+    width: desktopSize(345);
+  }
+  
+  .social-link {
+    margin-right: desktopSize(20);
+    height: desktopSize(38);
+    width: desktopSize(38);
+  
+    &:hover {
+      box-shadow: desktopSize(2) desktopSize(2) desktopSize(1) rgba($black, 0.4);
+    }
+  }
+  
+  .icon {
+    width: desktopSize(20);
+  }
+  
+  .contact-section {
+    row-gap: desktopSize(40);
+  }
+  
+  .contact-title {
+    font-size: desktopSize(20);
+    margin-bottom: desktopSize(25);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .container {
+    padding: mediumSize(50) mediumSize(100);
+  }
+  
+  .logo {
+    margin-bottom: mediumSize(30);
+    width: mediumSize(70);
+  }
+  
+  .links-container {
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: mediumSize(10) mediumSize(20);
+    width: mediumSize(200);
+  }
+  
+  .social-link {
+    margin-right: mediumSize(15);
+    height: mediumSize(21);
+    width: mediumSize(21);
+
+    &:hover {
+      box-shadow: mediumSize(2) mediumSize(2) mediumSize(1) rgba($black, 0.4);
+    }
+  }
+  
+  .icon {
+    width: mediumSize(12);
+  }
+  
+  .phone-number {
+    font-size: mediumSize(10);
+  }
+
+  .contact-section {
+    row-gap: mediumSize(30);
+    width: 50%;
+  }
+  
+  .contact-title {
+    font-size: mediumSize(11);
+    margin-bottom: mediumSize(14);
+
+    &.stay-updated {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .logo {
+    display: none;
+  }
+
+  .inner-container {
+    flex-direction: column;
+  }
+
+  .links-container {
+    grid-gap: 5px 20px;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(5, 1fr);
+    width: auto;
+  }
+
+  .first-container {
+    margin-bottom: 80px;
+  }
+
+  .contact-section {
+    row-gap: 60px;
+  }
+
+  .sn-links-container,
+  .phone-container,
+  .subscription-form-container {
+    grid-column: auto;
+  }
+
+  .container {
+    padding: 50px 20px;
+  }
+  
+  .social-link {
+    margin-right: 15px;
+    height: 38px;
+    width: 38px;
+
+    &:hover {
+      box-shadow: 2px 2px 1px rgba($black, 0.4);
+    }
+  }
+  
+  .icon {
+    width: 20px;
+  }
+  
+  .phone-number {
+    font-size: 15px;
+  }
+
+  .contact-section {
+    row-gap: 60px;
+    width: auto;
+  }
+  
+  .contact-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    &.stay-updated {
+      margin-bottom: 10px;
+    }
+  }
+}

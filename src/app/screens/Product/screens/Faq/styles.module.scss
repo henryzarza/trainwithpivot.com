@@ -1,0 +1,52 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/components';
+@import 'scss/typography';
+
+.faq-section {
+  @extend %max-size-padding;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  padding-bottom: maxScalingSize(160);
+  padding-top: maxScalingSize(160);
+}
+
+.section-title {
+  margin-bottom: maxScalingSize(90);
+  text-align: center;
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .faq-section {
+    padding: desktopSize(160) desktopSize(200);
+  }
+  
+  .section-title {
+    margin-bottom: desktopSize(90);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .faq-section {
+    padding: mediumSize(120) mediumSize(40);
+  }
+
+  .section-title {
+    margin-bottom: mediumSize(120);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .faq-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+}
+

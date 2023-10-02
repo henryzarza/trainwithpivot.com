@@ -1,0 +1,280 @@
+@import 'colors';
+@import 'mixins';
+@import 'variables';
+@import 'utils';
+
+%base-title {
+  color: $black;
+  text-transform: uppercase;
+}
+
+.big-title,
+%big-title {
+  @extend %base-title;
+
+  font-weight: 800;
+  @include base-text(maxScalingSize(150), 0.9);
+  letter-spacing: -5px;
+}
+
+.title,
+%title {
+  @extend %base-title;
+
+  font-weight: 800;
+  @include base-text(maxScalingSize(100), 1);
+}
+
+.small-title,
+%small-title {
+  @extend %base-title;
+
+  font-weight: 700;
+  @include base-text(maxScalingSize(30), 1.17);
+}
+
+.big-subtitle,
+%big-subtitle {
+  @extend %base-title;
+
+  font-weight: 800;
+  @include base-text(maxScalingSize(55), 1.1);
+  letter-spacing: -1.83px;
+}
+
+.subtitle,
+%subtitle {
+  @extend %base-title;
+
+  font-weight: 800;
+  @include base-text(maxScalingSize(30), 1.17);
+}
+
+.small-subtitle,
+%small-subtitle {
+  @extend %base-title;
+
+  font-weight: 600;
+  @include base-text(maxScalingSize(16), 1.1);
+}
+
+.big-text,
+%big-text {
+  color: $black;
+  font-weight: 400;
+  @include base-text(maxScalingSize(25), 35px);
+}
+
+.base-text,
+%base-text {
+  color: $black;
+  font-weight: 400;
+  @include base-text(maxScalingSize(16), 1.6);
+}
+
+.small-text,
+%small-text {
+  color: $black;
+  font-weight: 400;
+  @include base-text(maxScalingSize(14), 1.5);
+}
+
+.medium-text,
+%medium-text {
+  color: $black;
+  font-weight: 400;
+  @include base-text(maxScalingSize(18), 1.6);
+}
+
+.quote-text,
+%quote-text {
+  color: $black;
+  font-weight: 400;
+  @include base-text(maxScalingSize(45), 1.16);
+}
+
+.link-text {
+  text-decoration: underline;
+}
+
+.stronger-bold {
+  font-weight: 800;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.white-text,
+%white-text {
+  color: $white;
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .big-title,
+  %big-title {
+    @include base-text(desktopSize(150), 0.9);
+  }
+
+  .title,
+  %title {
+    @include base-text(desktopSize(100), 1);
+  }
+
+  .small-title,
+  %small-title {
+    @include base-text(desktopSize(30), 1.17);
+  }
+
+  .big-subtitle,
+  %big-subtitle {
+    @include base-text(desktopSize(55), 1.1);
+  }
+
+  .subtitle,
+  %subtitle {
+    @include base-text(desktopSize(30), 1.17);
+  }
+
+  .small-subtitle,
+  %small-subtitle {
+    @include base-text(desktopSize(16), 1.1);
+  }
+
+  .big-text,
+  %big-text {
+    @include base-text(desktopSize(25), 35px);
+  }
+
+  .base-text,
+  %base-text {
+    @include base-text(desktopSize(16), 1.6);
+  }
+
+  .small-text,
+  %small-text {
+    @include base-text(desktopSize(14), 1.5);
+  }
+
+  .medium-text,
+  %medium-text {
+    @include base-text(desktopSize(18), 1.6);
+  }
+
+  .quote-text,
+  %quote-text {
+    @include base-text(desktopSize(45), 1.16);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .big-title,
+  %big-title {
+    @include base-text(mediumSize(95), 0.9);
+    letter-spacing: mediumSize(-4.37);
+  }
+
+  .big-subtitle,
+  %big-subtitle {
+    @include base-text(mediumSize(30), 1.1);
+  }
+
+  .title,
+  %title {
+    @include base-text(mediumSize(56), 1);
+  }
+
+  .big-text {
+    @include base-text(mediumSize(18), 28px);
+  }
+
+  .quote-text,
+  %quote-text {
+    @include base-text(mediumSize(30), 1.5);
+  }
+
+  .big-subtitle,
+  %big-subtitle {
+    @include base-text(mediumSize(30), 1.1);
+    letter-spacing: mediumSize(-1);
+  }
+
+  .subtitle {
+    @include base-text(mediumSize(24), 1.1);
+  }
+
+  .base-text,
+  %base-text {
+    @include base-text(mediumSize(14), 1.57);
+  }
+
+  .small-subtitle,
+  %small-subtitle {
+    @include base-text(mediumSize(14), 1.43);
+  }
+
+  .small-text,
+  %small-text {
+    @include base-text(mediumSize(14), 1.5);
+  }
+
+  .quote-text,
+  %quote-text {
+    @include base-text(mediumSize(30), 1.17);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .big-title,
+  %big-title {
+    @include base-text(45px, 1.04);
+    letter-spacing: -1.5px;
+  }
+
+  .big-subtitle,
+  %big-subtitle {
+    @include base-text(35px, 1.14);
+    letter-spacing: -1px;
+  }
+
+  .title,
+  %title {
+    @include base-text(45px, 1.1);
+  }
+
+  .big-text {
+    @include base-text(16px, 1.2);
+  }
+
+  .quote-text,
+  %quote-text {
+    @include base-text(25px, 1.32);
+  }
+
+  .subtitle {
+    @include base-text(20px, 1.1);
+  }
+
+  .base-text,
+  %base-text {
+    @include base-text(16px, 1.56);
+  }
+
+  .small-subtitle,
+  %small-subtitle {
+    @include base-text(16px, 1.25);
+  }
+
+  .small-text,
+  %small-text {
+    @include base-text(14px, 1.5);
+  }
+}

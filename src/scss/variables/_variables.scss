@@ -1,0 +1,26 @@
+// Font family
+$font-family: 'Good Sans', -apple-system, blinkmacsystemfont, roboto, 'Droid Sans', sans-serif;
+
+// Transitions
+$transition-duration: 290ms;
+$transition-function: cubic-bezier(0.79, 0.01, 0.38, 0.99);
+$quick-transition-duration: 200ms;
+
+// General
+$content-max-width: 1440px; // delete this variable
+$navbar-height: 70px;
+$navbar-height-absolute: $navbar-height / 1px;
+$rubik-font: 'Rubik', 'Good Sans';
+$heroic-font: 'Heroic', $rubik-font;
+
+// Media queries
+$small-device: 550px;
+$medium-device: 810px;
+$desktop-device: 991px;
+$big-device: 1024px;
+$bigger-device: 1440px;
+$ipad-pro-height: 1366px;
+$max-scaling-device-width: 1440px;
+
+// Z-index
+$navbar-z-index: 20;

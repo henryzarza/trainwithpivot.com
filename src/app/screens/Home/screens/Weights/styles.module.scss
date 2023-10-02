@@ -1,0 +1,260 @@
+@import 'colors';
+@import 'variables';
+@import 'mixins';
+@import 'utils';
+$custom-small-device: $small-device - 230;
+
+.section {
+  --position-title: initial;
+  --opacity-title: 1;
+  --translate1: 0;
+  --translate3: 0;
+  background-color: $white;
+  min-height: maxScalingSize(2800);
+  overflow-x: hidden;
+}
+
+.content {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: maxScalingSize(2800);
+  position: relative;
+  width: $max-scaling-device-width;
+}
+
+.description {
+  bottom: maxScalingSize(300);
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: maxScalingSize(200);
+  width: maxScalingSize(485);
+}
+
+.title-container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  left: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  opacity: var(--opacity-title);
+  position: var(--position-title);
+  right: 0;
+  top: 0;
+  width: $max-scaling-device-width;
+  z-index: 1;
+}
+
+.title {
+  width: 100%;
+  white-space: pre-line;
+}
+
+.img-weight {
+  position: absolute;
+
+  &.first {
+    right: maxScalingSize(250);
+    top: maxScalingSize(60);
+    transform: translateY(var(--translate1));
+    width: maxScalingSize(220);
+    will-change: transform;
+  }
+
+  &.second {
+    left: maxScalingSize(150);
+    top: maxScalingSize(580);
+    width: maxScalingSize(270);
+    z-index: 2;
+  }
+
+  &.three {
+    right: maxScalingSize(300);
+    top: maxScalingSize(300);
+    transform: translateY(calc(#{maxScalingSize(500)} + var(--translate3)));
+    width: maxScalingSize(310);
+    will-change: transform;
+  }
+
+  &.last {
+    bottom: maxScalingSize(175);
+    left: maxScalingSize(150);
+    width: maxScalingSize(390);
+  }
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .section,
+  .content {
+    min-height: desktopSize(2800);
+  }
+
+  .description {
+    bottom: desktopSize(300);
+    right: desktopSize(200);
+    width: desktopSize(485);
+  }
+
+  .img-weight {
+    &.first {
+      right: desktopSize(250);
+      top: desktopSize(60);
+      transform: translateY(var(--translate1));
+      width: desktopSize(220);
+    }
+  
+    &.second {
+      left: desktopSize(150);
+      top: desktopSize(580);
+      width: desktopSize(270);
+    }
+  
+    &.three {
+      right: desktopSize(300);
+      top: desktopSize(300);
+      transform: translateY(calc(#{desktopSize(500)} + var(--translate3)));
+      width: desktopSize(310);
+    }
+  
+    &.last {
+      bottom: desktopSize(175);
+      left: desktopSize(150);
+      width: desktopSize(390);
+    }
+  }
+}
+
+@media screen and (max-width: $big-device) {
+  .img-weight {
+    &.first {
+      right: screenSize(150, 1024);
+    }
+
+    &.second {
+      left: screenSize(80, 1024);
+    }
+
+    &.three {
+      right: screenSize(200, 1024);
+    }
+
+    &.last {
+      left: screenSize(100, 1024);
+    }
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .title-container {
+    height: auto;
+    opacity: 1;
+    z-index: initial;
+  }
+
+  .title {
+    z-index: 1;
+  }
+
+  .content {
+    padding-top: mediumSize(235);
+  }
+
+  .section,
+  .content {
+    min-height: mediumSize(985);
+  }
+
+  .description {
+    bottom: mediumSize(150);
+    opacity: 1;
+    padding: 0 mediumSize(20);
+    right: mediumSize(40);
+    width: mediumSize(385);
+  }
+
+  .subtitle {
+    white-space: pre-line;
+  }
+
+  .img-weight {
+    &.first {
+      right: mediumSize(140);
+      top: mediumSize(-15);
+      width: mediumSize(115);
+    }
+
+    &.second {
+      left: mediumSize(100);
+      top: mediumSize(80);
+      width: mediumSize(150);
+    }
+
+    &.three {
+      right: mediumSize(150);
+      top: mediumSize(370);
+      transform: translateY(0);
+      width: mediumSize(190);
+    }
+
+    &.last {
+      bottom: mediumSize(80);
+      left: mediumSize(90);
+      width: mediumSize(245);
+    }
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .content {
+    padding-top: 145px;
+  }
+
+  .section,
+  .content {
+    min-height: 885px;
+  }
+
+  .description {
+    bottom: 80px;
+    left: 0;
+    padding: 0 20px;
+    right: 0;
+    width: 100%;
+  }
+
+  .img-weight {
+    &.first {
+      top: -15px;
+      right: 60px;
+      width: 85px;
+    }
+
+    &.second {
+      left: 45px;
+      top: 35px;
+      width: 100px;
+    }
+
+    &.three {
+      right: 70px;
+      top: 225px;
+      width: 120px;
+    }
+
+    &.last {
+      bottom: 330px;
+      left: 35px;
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: $custom-small-device) {
+  .title {
+    font-size: 35px;
+  }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>clock@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 12.5195678 0 12.5195678 12.7388676 0 12.7388676"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop/1---Homepage" transform="translate(-558.000000, -12132.000000)">
+            <g id="Module-9-Classes+Coaches" transform="translate(0.000000, 11219.000000)">
+                <g id="Classes-Section" transform="translate(89.000000, 198.000000)">
+                    <g id="Collections" transform="translate(0.000000, 440.000000)">
+                        <g id="Group-2" transform="translate(435.000000, 0.000000)">
+                            <g id="Image">
+                                <g id="Group-5" transform="translate(34.016370, 274.102912)">
+                                    <g id="clock" transform="translate(0.000000, 1.642931)">
+                                        <g id="Group-3">
+                                            <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-1"></use>
+                                            </mask>
+                                            <g id="Clip-2"></g>
+                                            <path d="M6.25978391,11.4649681 C3.49295942,11.4649681 1.25195678,9.18468798 1.25195678,6.36937009 C1.25195678,3.55405221 3.49295942,1.27377211 6.25978391,1.27377211 C9.0266084,1.27377211 11.267611,3.55405221 11.267611,6.36937009 C11.267611,9.18468798 9.0266084,11.4649681 6.25978391,11.4649681 M6.25352413,-0.00012738995 C2.79812341,-0.00012738995 0,2.85340748 0,6.36937009 C0,9.88596966 2.79812341,12.7388676 6.25352413,12.7388676 C9.71518463,12.7388676 12.5195678,9.88596966 12.5195678,6.36937009 C12.5195678,2.85340748 9.71518463,-0.00012738995 6.25352413,-0.00012738995" id="Fill-1" fill="#434C5B" mask="url(#mask-2)"></path>
+                                        </g>
+                                        <polygon id="Fill-4" fill="#434C5B" points="6.57277311 3.18462135 5.63380552 3.18462135 5.63380552 7.00631984 8.92019208 9.01271155 9.38967587 8.22926336 6.57277311 6.52860753"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

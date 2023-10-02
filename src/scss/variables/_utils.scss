@@ -1,0 +1,27 @@
+@import 'variables';
+
+@function screenSize($pixels, $size) {
+  @return #{$pixels * 100 / $size}vw;
+}
+
+@function desktopSize($pixels) {
+  @return screenSize($pixels, 1440);
+}
+
+@function mediumSize($pixels) {
+  @return screenSize($pixels, 810);
+}
+
+@function maxScalingSize($pixels) {
+  // Since $bigger-device is our design reference, this scales the $bigger-device pixel value into
+  // the max size value
+  @return #{$max-scaling-device-width * $pixels / $bigger-device}px;
+}
+
+@function getMaxSizePaddingValue() {
+  @return calc((100vw - #{$max-scaling-device-width}) / 2);
+} 
+
+%max-size-padding {
+  padding: 0 getMaxSizePaddingValue();
+}

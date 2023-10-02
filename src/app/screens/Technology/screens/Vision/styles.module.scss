@@ -1,0 +1,246 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/components';
+@import 'scss/typography';
+@import 'utils';
+
+.sensor-section,
+.camera-section {
+  @extend %max-size-padding;
+
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  min-height: maxScalingSize(810);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.section-image {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  max-height: maxScalingSize(810);
+  max-width: maxScalingSize(700);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .image {
+    height: 100%;
+    left: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+
+.section-content {
+  align-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  justify-content: center;
+  padding: maxScalingSize(20);
+}
+
+.section-title {
+  @extend %big-subtitle;
+
+  margin-bottom: maxScalingSize(20);
+  white-space: pre-line;
+}
+
+.section-text {
+  @extend %base-text;
+
+  max-width: maxScalingSize(490);
+}
+
+.sensor-section {
+  margin-bottom: maxScalingSize(100);
+  padding-top: maxScalingSize(200);
+
+  .section-image {
+    height: maxScalingSize(810);
+
+    .image {
+      left: 0;
+      right: 0;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.screen {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 55%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+
+.camera-section {
+  flex-direction: row-reverse;
+  padding-bottom: maxScalingSize(200);
+
+  .image {
+    height: 110%;
+    object-position: 35%;
+  }
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .sensor-section,
+  .camera-section {
+    min-height: desktopSize(810);
+    padding: desktopSize(30) 0;
+  }
+
+  .section-image {
+    max-height: desktopSize(810);
+    max-width: desktopSize(700);
+  }
+
+  .section-content {
+    padding: desktopSize(20);
+  }
+
+  .section-title {
+    margin-bottom: desktopSize(20);
+  }
+
+  .section-text {
+    max-width: desktopSize(490);
+  }
+
+  .sensor-section {
+    margin-bottom: desktopSize(100);
+    padding-top: desktopSize(200);
+
+    .section-image {
+      height: desktopSize(810);
+    }
+  }
+
+  .camera-section {
+    padding-bottom: desktopSize(200);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .sensor-section,
+  .camera-section {
+    min-height: mediumSize(440);
+    padding: 0;
+  }
+
+  .section-image {
+    max-height: mediumSize(440);
+    max-width: mediumSize(390);
+  }
+
+  .section-content {
+    padding: mediumSize(40);
+  }
+
+  .section-title {
+    margin-bottom: mediumSize(15);
+  }
+
+  .section-text {
+    max-width: mediumSize(290);
+  }
+
+  .sensor-section {
+    margin-bottom: mediumSize(100);
+    padding-top: mediumSize(140);
+
+    .section-image {
+      height: mediumSize(440);
+
+      .image {
+        height: 100%;
+      }
+    }
+  }
+
+  .camera-section {
+    padding-bottom: mediumSize(140);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .sensor-section,
+  .camera-section {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: unset;
+    padding: 20px;
+  }
+
+  .section-image {
+    margin-bottom: 35px;
+    max-height: 335px;
+    max-width: 100%;
+  }
+
+  .section-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-text {
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 35px;
+    letter-spacing: -1px;
+    line-height: 1.14;
+    margin-bottom: 15px;
+  }
+
+  .camera-section {
+    .section-image {
+      height: 56.7vw;
+    }
+  }
+
+  .sensor-section,
+  .camera-section {
+    margin-bottom: 40px;
+
+    .section-image {
+      height: 100vw;
+
+      .image {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: unset;
+        width: 100%;
+      }
+    }
+  }
+
+  .screen {
+    top: 0;
+    transform: unset;
+  }
+
+  .camera-section {
+    margin-bottom: 60px;
+
+    .image {
+      height: 100%;
+    }
+  }
+}

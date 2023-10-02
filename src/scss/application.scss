@@ -1,0 +1,37 @@
+/* stylelint-disable selector-max-id */
+
+@import '~wolox-equalizer/equalizer';
+
+@import 'fonts';
+
+@import 'layout';
+
+@import 'margins';
+
+@import 'components';
+
+@import 'typography';
+
+@import 'overrides';
+
+@import 'variables/variables';
+
+@import 'variables/colors';
+
+* {
+  font-family: $font-family;
+}
+
+html {
+  touch-action: manipulation;
+}
+
+html,
+body {
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}

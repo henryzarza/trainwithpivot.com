@@ -1,0 +1,79 @@
+@import 'colors';
+
+@import 'scss/typography';
+
+.stars-container {
+  align-items: center;
+  display: flex;
+}
+
+.star {
+  height: maxScalingSize(24);
+  width: auto;
+
+  &.completed-star {
+    path {
+      fill: url(#full-grad)
+    }
+  }
+
+  &.empty-star {
+    path {
+      fill: url(#empty-grad)
+    }
+
+    &.greyStar {
+      path {
+        fill: url(#empty-grey-grad)
+      }
+    }
+  }
+
+  &.half-star {
+    path {
+      fill: url(#half-grad)
+    } 
+
+    &.greyStar {
+      path {
+        fill: url(#half-grey-grad)
+      }
+    }
+  }
+}
+
+.text {
+  @extend %base-text;
+
+  margin-left: maxScalingSize(20);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .star {
+    height: desktopSize(24);
+  }
+
+  .text {
+    margin-left: desktopSize(20);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .star {
+    height: mediumSize(24);
+  }
+
+  .text {
+    margin-left: mediumSize(20);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .star {
+    height: 24px;
+  }
+
+  .text {
+    margin-left: 20px;
+  }
+}

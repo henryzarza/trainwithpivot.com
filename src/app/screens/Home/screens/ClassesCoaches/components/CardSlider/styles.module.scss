@@ -1,0 +1,197 @@
+@import 'colors';
+@import 'variables';
+@import 'utils';
+
+%rubik-font-base {
+  color: $river-bed;
+  font-family: $rubik-font;
+  line-height: 1.1;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+.card-header {
+  background-color: $periwinkle-blue;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: maxScalingSize(30);
+  padding: maxScalingSize(23);
+}
+
+.chip {
+  @extend %rubik-font-base;
+
+  background-color: $periwinkle-gray;
+  border-radius: maxScalingSize(18);
+  font-weight: 600;
+  margin-bottom: maxScalingSize(16);
+  padding: maxScalingSize(6) maxScalingSize(15);
+  width: max-content;
+}
+
+.image {
+  border-radius: maxScalingSize(10);
+  margin-bottom: maxScalingSize(16);
+  width: 100%;
+}
+
+.title {
+  @extend %rubik-font-base;
+
+  font-size: maxScalingSize(20);
+  margin-bottom: maxScalingSize(16);
+}
+
+.trainer {
+  @extend %rubik-font-base;
+
+  font-size: maxScalingSize(17);
+  margin-bottom: maxScalingSize(16);
+}
+
+.schedule {
+  @extend %rubik-font-base;
+}
+
+.ic-clock {
+  height: maxScalingSize(16);
+  width: maxScalingSize(16);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .card-header {
+    margin-bottom: desktopSize(30);
+    padding: desktopSize(23);
+  }
+  
+  .chip {
+    border-radius: desktopSize(18);
+    margin-bottom: desktopSize(16);
+    padding: desktopSize(6) desktopSize(15);
+  }
+  
+  .image {
+    border-radius: desktopSize(10);
+    margin-bottom: desktopSize(16);
+  }
+  
+  .title {
+    font-size: desktopSize(20);
+    margin-bottom: desktopSize(16);
+  }
+  
+  .trainer {
+    font-size: desktopSize(17);
+    margin-bottom: desktopSize(16);
+  }
+  
+  .ic-clock {
+    height: desktopSize(16);
+    width: desktopSize(16);
+  }
+}
+
+@media screen and (max-width: $big-device) {
+  .title {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .subtitle {
+    font-size: mediumSize(30);
+    line-height: 1.1;
+    letter-spacing: mediumSize(-1);
+    margin-bottom: mediumSize(16);
+  }
+
+  .card {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .card-header {
+    flex: 1;
+    margin-bottom: 0;
+    margin-right: mediumSize(90);
+    padding: mediumSize(30);
+  }
+
+  .chip {
+    border-radius: mediumSize(18);
+    margin-bottom: mediumSize(10);
+    padding: mediumSize(6) mediumSize(15);
+  }
+
+  .title {
+    font-size: mediumSize(14);
+    margin-bottom: mediumSize(10);
+  }
+
+  .trainer {
+    font-size: mediumSize(11);
+    margin-bottom: mediumSize(10);
+  }
+
+  .ic-clock {
+    height: mediumSize(11);
+    width: mediumSize(11);
+  }
+
+  .image {
+    margin-bottom: mediumSize(10);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .subtitle {
+    font-size: 35px;
+    line-height: 1.14;
+    margin-bottom: 14px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .trainer {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .card-header {
+    flex: 1;
+    margin-bottom: 35px;
+    margin-right: 0;
+    padding: 30px;
+  }
+
+  .chip {
+    border-radius: 18px;
+    font-size: 10px;
+    margin-bottom: 16px;
+    padding: 6px 15px;
+  }
+
+  .ic-clock {
+    height: 12px;
+    width: 12px;
+  }
+
+  .image {
+    margin-bottom: 12px;
+  }
+
+  .schedule {
+    font-size: 12px;
+  }
+}

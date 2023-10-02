@@ -1,0 +1,155 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/animations';
+@import 'scss/components';
+@import 'scss/typography';
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+  z-index: 1;
+
+  &.input-filled {
+    .input {
+      background-color: $white;
+      color: $violet;
+      outline: none;
+      padding: desktopSize(10);
+    }
+  }
+}
+
+.input {
+  appearance: none;
+  background-color: $transparent;
+  border-bottom: 1px solid $dusty-gray;
+  border-radius: 0;
+  color: $white;
+  font-size: desktopSize(16);
+  padding: desktopSize(10) 0;
+  transition: background-color $transition-duration $transition-function, color $transition-duration $transition-function, padding $transition-duration $transition-function;
+  width: 100%;
+
+  &::placeholder {
+    color: $white;
+  }
+
+  &:focus {
+    background-color: $white;
+    color: $violet;
+    outline: none;
+    padding: desktopSize(10);
+
+    &::placeholder {
+      color: $violet;
+    }
+  }
+}
+
+.action-container {
+  bottom: desktopSize(3);
+  color: $violet;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  right: desktopSize(3);
+  top: desktopSize(8);
+  transition: opacity $transition-duration, transform $transition-duration;
+  user-select: none;
+  width: auto;
+  z-index: 1;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: initial;
+    transform: none;
+  }
+}
+
+.cta-btn {
+  @extend %button;
+
+  border: 1px solid currentColor;
+  color: currentColor;
+  font-size: desktopSize(12);
+  height: 100%;
+  line-height: 1;
+  min-height: auto;
+  padding: desktopSize(10);
+  text-transform: uppercase;
+}
+
+.result {
+  @extend %base-text;
+
+  color: $light-blue;
+  position: absolute;
+  top: 100%;
+
+  &.is-error {
+    color: $vivid-tangerine;
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .input-container.input-filled {
+    .input {
+      padding: mediumSize(10) mediumSize(10) mediumSize(10) mediumSize(10);
+    }
+  }
+  
+  .input {
+    font-size: mediumSize(10);
+    padding: mediumSize(10) 0;
+  
+    &:focus {
+      padding: mediumSize(10);
+    }
+  }
+  
+  .action-container {
+    bottom: mediumSize(3);
+    right: mediumSize(3);
+    top: mediumSize(8);
+  }
+  
+  .cta-btn {
+    font-size: mediumSize(10);
+    padding: mediumSize(10);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .input-container.input-filled {
+    .input {
+      padding: 10px;
+    }
+  }
+  
+  .input {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px 0;
+  
+    &:focus {
+      padding: 10px;
+    }
+  }
+  
+  .action-container {
+    bottom: 3px;
+    right: 3px;
+    top: 8px;
+  }
+  
+  .cta-btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

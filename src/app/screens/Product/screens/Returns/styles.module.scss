@@ -1,0 +1,44 @@
+@import 'colors';
+@import 'variables';
+@import 'utils';
+
+.container {
+  @extend %max-size-padding;
+
+  align-items: center;
+  background-color: $pearl-bush;
+  display: flex;
+  justify-content: center;
+  padding-bottom: maxScalingSize(160);
+  padding-top: maxScalingSize(160);
+}
+
+.inner-wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .container {
+    padding: desktopSize(160) desktopSize(195);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .container {
+    padding: mediumSize(105) mediumSize(40);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .container {
+    padding: 90px 20px;
+  }
+
+  .inner-wrapper {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,51 @@
+// Good Sans
+@font-face {
+  font-family: 'Good Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./GoodSans/GoodSans-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Good Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./GoodSans/GoodSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Good Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./GoodSans/GoodSans-Regular.woff') format('woff');
+}
+
+// Rubik
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./Rubik/Rubik-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./Rubik/Rubik-Medium.ttf') format('ttf');
+}
+
+// Heroic
+@font-face {
+  font-family: 'Heroic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./HeroicCondensed/HeroicCondensed-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Heroic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./HeroicCondensed/HeroicCondensed-Book.otf') format('opentype');
+}

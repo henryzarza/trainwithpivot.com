@@ -1,0 +1,85 @@
+@import 'variables';
+@import 'colors';
+@import 'scss/typography';
+@import 'mixins';
+
+.section {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 210px 195px 0;
+  width: $content-max-width;
+
+  &:last-of-type {
+    padding-bottom: 210px;
+  }
+}
+
+.content {
+  border-top: 1px solid $black;
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: auto 1fr;
+  padding-top: 50px;
+}
+
+.items {
+  list-style-type: disc;
+  padding-left: 24px;
+
+  li {
+    @extend %base-text;
+
+    list-style-type: disc;
+  }
+
+  &.ordered,
+  &.ordered li {
+    list-style-type: decimal;
+  }
+}
+
+@media screen and (max-width: $big-device) {
+  .section {
+    padding: 180px 100px 0;
+
+    &:last-of-type {
+      padding-bottom: 180px;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop-device) {
+  .section {
+    padding: 130px 50px 0;
+
+    &:last-of-type {
+      padding-bottom: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .section {
+    padding: 105px 25px 0;
+
+    &:last-of-type {
+      padding-bottom: 105px;
+    }
+  }
+
+  .main-title {
+    text-align: center;
+  }
+
+  .content {
+    grid-gap: 50px;
+    grid-template-columns: 1fr;
+  }
+
+  .custom-subtitle {
+    @include base-text(35px, 1.2);
+  }
+}

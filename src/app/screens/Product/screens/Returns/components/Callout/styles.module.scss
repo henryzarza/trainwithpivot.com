@@ -1,0 +1,64 @@
+@import 'utils';
+@import 'variables';
+
+.container {
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &:not(:last-child) {
+    margin-right: desktopSize(90);
+  }
+}
+
+.title {
+  margin-bottom: desktopSize(14);
+}
+
+.icon {
+  height: desktopSize(59);
+  margin-bottom: desktopSize(25);
+  width: desktopSize(59);
+}
+
+@media screen and (max-width: $medium-device) {
+  .container:not(:last-child) {
+    margin-right: mediumSize(25);
+  }
+
+  .title {
+    font-size: mediumSize(16);
+    margin-bottom: mediumSize(14);
+  }
+
+  .icon {
+    height: mediumSize(70);
+    margin-bottom: mediumSize(16);
+    width: mediumSize(70);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .container {
+    max-width: 325px;
+
+    &:not(:last-child) {
+      margin: 0 0 70px;
+    }
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+    line-height: 1.14;
+    margin-bottom: 14px;
+  }
+
+  .icon {
+    height: 70px;
+    margin-bottom: 20px;
+    width: 70px;
+  }
+}

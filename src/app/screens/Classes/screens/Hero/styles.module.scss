@@ -1,0 +1,116 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/animations';
+@import 'scss/components';
+@import 'mixins';
+
+.hero-section {
+  align-items: center;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+
+  &.bring-to-front {
+    z-index: 20;
+  }
+}
+
+.video {
+  bottom: 0;
+  height: 100vh;
+  object-fit: cover;
+  object-position: top;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.play-btn {
+  @extend %button;
+
+  background-color: $transparent;
+  border: 1px solid $white;
+  color: $white;
+  cursor: pointer;
+  @include base-text(maxScalingSize(16), 1.6);
+  @include setAnimation(fadeInUp, 600ms, 500ms);
+  padding: maxScalingSize(14) maxScalingSize(24);
+  z-index: 1;
+
+  &.take-to-back {
+    z-index: 0;
+  }
+}
+
+.btn-close {
+  color: $white;
+  cursor: pointer;
+  font-size: maxScalingSize(30);
+  line-height: 1.1;
+  position: absolute;
+  right: 0;
+  top: maxScalingSize(20);
+  transition: color $quick-transition-duration $transition-function;
+
+  &:hover {
+    color: $light-violet;
+  }
+}
+
+.container {
+  height: 100%;
+  padding: maxScalingSize($navbar-height-absolute) maxScalingSize(30) maxScalingSize(20);
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .play-btn {
+    @include base-text(desktopSize(16), 1.6);
+    padding: desktopSize(14) desktopSize(24);
+  }
+  
+  .btn-close {
+    font-size: desktopSize(30);
+    top: desktopSize(20);
+  }
+  
+  .container {
+    padding: desktopSize($navbar-height-absolute) desktopSize(30) desktopSize(20);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .play-btn {
+    @include base-text(mediumSize(16), 1.6);
+    padding: mediumSize(14) mediumSize(24);
+  }
+  
+  .btn-close {
+    font-size: mediumSize(30);
+    top: mediumSize(20);
+  }
+  
+  .container {
+    padding: mediumSize($navbar-height-absolute) mediumSize(30) mediumSize(20);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .play-btn {
+    @include base-text(16px, 1.6);
+    padding: 14px 24px;
+  }
+  
+  .btn-close {
+    font-size: 30px;
+    top: 20px;
+  }
+  
+  .container {
+    padding: mediumSize($navbar-height-absolute) 30px 20px;
+  }
+}

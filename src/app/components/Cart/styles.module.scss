@@ -1,0 +1,53 @@
+@import 'colors';
+
+@import 'variables';
+
+@import 'scss/typography';
+
+$cart-item-padding: 20px;
+
+.container {
+  background-color: $pampas;
+  max-width: 470px;
+  width: 100%;
+}
+
+.total-cost {
+
+  @extend %small-subtitle;
+  border-top: 1px solid $light-gray;
+  padding: $cart-item-padding 0;
+
+  &:nth-child(even) {
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &.subtotal {
+    border-bottom: 1px solid $light-gray;
+    border-top: none;
+    margin-bottom: 30px;
+  }
+
+  &.amount-due {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: $desktop-device) {
+
+  .container {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: $small-device - 80) {
+
+  .cart-items-container {
+    border-top: none;
+  }
+
+  .shipping {
+    border-bottom: 1px solid $light-gray;
+    padding: 0 0 64px;
+  }
+}

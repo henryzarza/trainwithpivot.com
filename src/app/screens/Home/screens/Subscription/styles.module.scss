@@ -1,0 +1,233 @@
+@import 'colors';
+@import 'variables';
+@import 'mixins';
+@import 'utils';
+
+$custom-big-device: $big-device + 100;
+$custom-small-device: $small-device - 230;
+
+.section {
+  @extend %max-size-padding;
+
+  --section-position: initial;
+  --price-opacity: 0;
+  --description-opacity: 0;
+  background-color: $light-gray;
+  min-height: calc(100vh - #{maxScalingSize(70)});
+
+  &.without-animation {
+    --price-opacity: 1;
+    --description-opacity: 1;
+  }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: calc(100vh - #{maxScalingSize(70)});
+  padding: maxScalingSize(115) maxScalingSize(60);
+  position: var(--section-position);
+  top: 0;
+  width: $max-scaling-device-width;
+}
+
+.button {
+  width: maxScalingSize(180);
+}
+
+.price-content {
+  margin-right: maxScalingSize(195);
+  max-width: 100%;
+  opacity: var(--price-opacity);
+  width: maxScalingSize(460);
+}
+
+.title {
+  @include base-text(maxScalingSize(340), 0.8);
+  letter-spacing: -#{maxScalingSize(23)};
+}
+
+.price-symbol {
+  align-self: flex-start;
+}
+
+.description-title {
+  margin-bottom: maxScalingSize(15);
+  white-space: pre-line;
+}
+
+.description-content {
+  margin-bottom: maxScalingSize(45);
+  max-width: 100%;
+  opacity: var(--description-opacity);
+  width: maxScalingSize(395);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .section {
+    min-height: calc(100vh - #{desktopSize(70)});
+  }
+
+  .content {
+    min-height: calc(100vh - #{desktopSize(70)});
+    padding: desktopSize(115) desktopSize(60);
+  }
+
+  .button {
+    width: desktopSize(180);
+  }
+
+  .price-content {
+    margin-right: desktopSize(195);
+    width: desktopSize(460);
+  }
+
+  .title {
+    @include base-text(desktopSize(340), 0.8);
+    letter-spacing: -#{desktopSize(23)};
+  }
+
+  .description-title {
+    margin-bottom: desktopSize(15);
+  }
+
+  .description-content {
+    margin-bottom: desktopSize(45);
+    width: desktopSize(395);
+  }
+}
+
+@media screen and (max-width: $custom-big-device) {
+  .price-content {
+    margin-right: screenSize(100, 1124);
+  }
+
+  .title {
+    font-size: screenSize(280, 1124);;
+  }
+
+  .description-content {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: $desktop-device) {
+  .description-content {
+    margin-bottom: screenSize(30, 991);
+    width: screenSize(395, 991);
+  }
+
+  .price-content {
+    margin-right: screenSize(60, 991);
+    width: screenSize(460, 991);
+  }
+
+  .title {
+    font-size: screenSize(240, 991);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .description-title {
+    margin-bottom: mediumSize(15);
+  }
+
+  .description-content, .price-content {
+    width: 100%;
+  }
+
+  .section, .content {
+    --price-opacity: 1;
+    --description-opacity: 1;
+    min-height: 450px;
+  }
+
+  .price-content {
+    margin-bottom: mediumSize(30);
+    margin-right: mediumSize(90);
+    width: mediumSize(460);
+  }
+
+  .price-symbol {
+    font-size: mediumSize(16);
+  }
+
+  .title {
+    font-size: mediumSize(191);
+    letter-spacing: -13px;
+    margin-bottom: mediumSize(28);
+  }
+
+  .description-content {
+    margin-bottom: 0;
+    width: mediumSize(395);
+  }
+
+  .subtitle {
+    @include base-text(mediumSize(16), 1.17);
+  }
+
+  .button {
+    width: mediumSize(160);
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .description-title {
+    line-height: 1.14;
+    margin-bottom: 15px;
+    padding-right: 50px;
+  }
+
+  .price-symbol {
+    font-size: 20px;
+    transform: translate(14px, -10px);
+  }
+
+  .content {
+    flex-direction: column;
+    min-height: auto;
+    padding: 90px 20px;
+  }
+
+  .price-content {
+    margin-bottom: 70px;
+    margin-right: 0;
+    padding: 0;
+    width: 460px;
+  }
+
+  .title {
+    @include base-text(220px, 0.82);
+    letter-spacing: -14px;
+  }
+
+  .description-content {
+    margin-bottom: 0;
+    padding: 0;
+    width: 395px;
+  }
+
+  .button {
+    align-self: center;
+    margin-top: 20px;
+    width: auto;
+  }
+
+  .subtitle {
+    @include base-text(20px, 1);
+  }
+}
+
+@media screen and (max-width: $custom-small-device) {
+  .title {
+    font-size: 180px;
+  }
+
+  .price-symbol {
+    transform: translate(0, -10px);
+  }
+}

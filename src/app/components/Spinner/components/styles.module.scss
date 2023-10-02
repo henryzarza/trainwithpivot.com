@@ -1,0 +1,71 @@
+@import 'colors';
+@import 'utils';
+@import 'variables';
+
+.spinner {
+  align-items: center;
+  background-color: $white;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.spinner-dot {
+  height: desktopSize(50);
+  position: relative;
+  width: desktopSize(50);
+
+  &::before,
+  &::after {
+    animation: wave 2s linear infinite;
+    border: 1px dotted $violet;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &::after {
+    animation-delay: -1s;
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .spinner-dot {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  60% {
+    opacity: 0.5;
+    transform: scale(2);
+  }
+  80% {
+    opacity: 0.25;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}

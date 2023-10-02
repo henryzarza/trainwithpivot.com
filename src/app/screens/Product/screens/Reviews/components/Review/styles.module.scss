@@ -1,0 +1,88 @@
+@import 'colors';
+
+@import 'variables';
+
+@import 'scss/typography';
+
+$star-size: 17;
+$star-gap: 2;
+
+.review {
+  @extend %base-text;
+
+  &:not(:nth-last-child(-n + 2)) {
+    padding-bottom: maxScalingSize(60);
+  }
+}
+
+.comment {
+  @extend %base-text;
+
+  margin-bottom: maxScalingSize(14);
+}
+
+.author {
+  @extend %small-subtitle;
+}
+
+.star {
+  height: maxScalingSize(17);
+}
+
+.stars-container {
+  margin-bottom: maxScalingSize(14);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .star {
+    height: desktopSize(17);
+  }
+
+  .stars-container {
+    margin-bottom: desktopSize(14);
+  }
+
+  .review:not(:nth-last-child(-n + 2)) {
+    padding-bottom: desktopSize(60);
+  }
+  
+  .comment {
+    margin-bottom: desktopSize(14);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .star {
+    height: mediumSize(17);
+  }
+
+  .stars-container {
+    margin-bottom: mediumSize(14);
+  }
+
+  .review:not(:nth-last-child(-n + 2)) {
+    padding-bottom: mediumSize(50);
+  }
+
+  .comment {
+    margin-bottom: mediumSize(14);
+  } 
+}
+
+@media screen and (max-width: $small-device) {
+  .stars-container {
+    margin-bottom: 14px;
+  }
+
+  .star {
+    height: 17px;
+  }
+
+  .review:not(:nth-last-child(-n + 1)) {
+    padding-bottom: 40px;
+  }
+  
+  .comment {
+    margin-bottom: 14px;
+  } 
+}

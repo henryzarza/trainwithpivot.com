@@ -1,0 +1,132 @@
+@import 'colors';
+@import 'variables';
+@import 'scss/components';
+@import 'scss/typography';
+
+.subscription-section {
+  @extend %max-size-padding;
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: maxScalingSize(120);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.image {
+  flex: 1;
+  height: maxScalingSize(810);
+  max-height: calc(100vh - #{maxScalingSize(70)});
+  min-width: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.section-content {
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  justify-content: flex-end;
+}
+
+.content-wrapper {
+  align-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  max-width: maxScalingSize(460);
+}
+
+.section-title {
+  @extend %big-subtitle;
+
+  flex-grow: 1;
+  margin-bottom: maxScalingSize(20);
+}
+
+.section-text {
+  @extend %base-text;
+
+  margin-bottom: maxScalingSize(50);
+}
+
+.learn-more-btn {
+  @extend %button;
+
+  border: 1px solid $black;
+  min-width: maxScalingSize(180);
+}
+
+@media screen and (max-width: $max-scaling-device-width) {
+  .subscription-section {
+    margin-bottom: desktopSize(120);
+  }
+  
+  .image {
+    height: desktopSize(810);
+    max-height: calc(100vh - #{desktopSize(70)});
+  }
+
+  .section-content {
+    justify-content: center;
+  }
+  
+  .content-wrapper {
+    max-width: desktopSize(460);
+   }
+  
+  .section-title {
+    margin-bottom: desktopSize(20);
+  }
+  
+  .section-text {
+    margin-bottom: desktopSize(50);
+  }
+  
+  .learn-more-btn {
+    min-width: desktopSize(180);
+  }
+}
+
+@media screen and (max-width: $medium-device) {
+  .image {
+    height: mediumSize(440);
+    max-height: calc(100vh - #{mediumSize(70)});
+  }
+}
+
+@media screen and (max-width: $small-device) {
+  .section-title {
+    margin-bottom: 15px;
+  }
+
+  .subscription-section {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  .image {
+    height: 450px;
+    margin-bottom: 35px;
+    max-height: calc(100vh - #{$navbar-height});
+  }
+
+  .section-text {
+    margin-bottom: 80px;
+  }
+
+  .content-wrapper {
+    max-width: unset;
+    padding: 0;
+  }
+
+  .learn-more-btn {
+    align-self: center;
+    width: 180px;
+  }
+}

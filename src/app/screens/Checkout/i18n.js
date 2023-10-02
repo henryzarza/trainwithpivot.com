@@ -1,0 +1,43 @@
+import i18next from 'i18next';
+
+i18next.addResources('en', 'checkout', {
+  THANK_YOU_MESSAGE_TITLE: 'Thank you for your order!',
+  YOUR_ORDER_NUMBER_IS: 'Your order number is',
+  ORDER_TOTAL: 'Order total',
+  SHIPPING: 'Shipping',
+  SHIPPING_ADDRESS: 'Shipping Address',
+  SHIPPING_INFO: 'Shipping information',
+  YOUR_CART: 'Your cart\n ({{number}} items)',
+  PRICE: '$ {{price}}',
+  SUBTOTAL: 'Subtotal',
+  AMOUNT_DUE_TODAY: 'Amount due today',
+  BILLING_ADDRESS: 'Billing Address',
+  CUSTOMER_DETAILS: 'Customer details',
+  EMAIL: 'Email: {{email}}',
+  TEL: 'Tel: {{tel}}',
+  SUBSCRIPTION_EMAIL: 'Email',
+  SHIPPING_CHECKBOX:
+    "Yes, I'd like email updates from Pivot (including launch announcements, product info). Unsubscribe at anytime.",
+  BILLING_CHECKBOX: 'Same as shipping address.',
+  FULL_NAME: 'Full name',
+  FIRST_NAME: 'First name',
+  LAST_NAME: 'Last name',
+  ADDRESS_LINE: 'Address line',
+  APARTMENT: 'Apt/Floor/Suite',
+  CITY: 'City',
+  ZIP_CODE: 'Zip code',
+  STATE: 'State',
+  PHONE_NUMBER: 'Phone number',
+  BILLING: 'Billing',
+  PAYMENT_INFORMATION: 'Payment information',
+  ORDER_BUTTON: 'Place your order',
+  CARD_NUMBER: 'Card number',
+  CVV: 'CVV',
+  MAX_LENGTH: '45 characters maximum',
+  ONLY_LETTERS: 'Only letters allowed',
+  REMOVE: 'Remove',
+  MESSAGING:
+    "We'll contact you once your Pivot is available for shipment in Spring 2020. Deposit is credited towards final balance. Financing options will be available for the remainder of payment.",
+  LOADING: '',
+  REQUEST_ERROR: 'An error has ocurred. Please check all the fields and try again in a few minutes'
+});
